@@ -89,6 +89,7 @@ export type NonUserDetails = {
 export type WebOfTrustEntry = {
   attestingUser: string
   attestation: string
+  proofID: RPCTypes.SigID
   status: RPCTypes.WotStatusType
   verificationType: WebOfTrustVerificationType
   vouchedAt: number

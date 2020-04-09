@@ -51,7 +51,7 @@ const connected = Container.namedConnect(
     if (!notAUser) {
       // Keybase user
       const followThem = Constants.followThem(state, username)
-      const {followersCount, followingCount, followers, following, reason, webOfTrustEntries} = d
+      const {followersCount, followingCount, followers, following, reason, webOfTrustEntries = []} = d
       const mutualFollow = followThem && Constants.followsYou(state, username)
 
       return {
@@ -69,7 +69,7 @@ const connected = Container.namedConnect(
         sbsAvatarUrl: undefined,
         serviceIcon: undefined,
         title: username,
-        webOfTrustEntries: webOfTrustEntries || [],
+        webOfTrustEntries,
       }
     } else {
       // SBS profile. But `nonUserDetails` might not have arrived yet,
